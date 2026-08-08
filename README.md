@@ -2,10 +2,8 @@
 
 [![Indie Founder](https://img.shields.io/badge/Indie_Founder-000000?style=for-the-badge&logo=starship&logoColor=white)]()
 [![Systems Architect](https://img.shields.io/badge/Systems_Architect-00599C?style=for-the-badge&logo=architecture&logoColor=white)]()
-[![15 Years Old](https://img.shields.io/badge/Age-15-FF6B6B?style=for-the-badge)]()
-[![Bangladesh](https://img.shields.io/badge/Bangladesh-006A4E?style=for-the-badge)]()
 
-> *"I don't ask for permission. I ask 'why not?' — then I build."*  
+> *"The moment you accept without questioning, you hand over control."*  
 > — Rahat Hasan
 
 ---
@@ -48,21 +46,7 @@ My goal is to help build technology that earns Bangladesh recognition on the glo
 
 ### 🧩 ZRCP
 
-```mermaid
-flowchart LR
-    A[Repository Files] --> B[SHA-256 Hashing]
-    B --> C{Changed?}
-    C -->|No| D[Generate Hash Stub]
-    C -->|Yes| E[Include Full Content]
-    D --> F[Prompt Assembly]
-    E --> F
-    G[Conversation History] --> H[History Deduplication]
-    H --> F
-    F --> I[Attention-Anchored Current State]
-    I --> J[Final Prompt]
-    J --> K[LLM]
-```
-> High-level architecture of the ZRCP context deduplication pipeline.
+> View the [ZRCP Protocol Specification](https://github.com/sover-labs/zrcp) — a hash-based protocol for eliminating redundant context between AI agents.
 ---
 
 ## 🤝 Team Up
@@ -132,9 +116,9 @@ If you're building something bold, thinking differently, or just getting started
 
 ---
 
-## 📊 GitHub Stats
+## 📖 Currently Writing
 
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=rahatarch&show_icons=true&theme=radical)
+**[Orchestrator of Reality](https://github.com/rahatarch/orchestrator-of-reality)** — A book about commanding AI instead of being led by it. Engineering principles for builders who want to stop vibe coding and start orchestrating.
 
 ---
 
@@ -147,4 +131,4 @@ If you're building something bold, thinking differently, or just getting started
 
 ---
 
-💡 *"I don't build for popularity. I build for permanence."*
+💡 *"I'm not chasing recognition. I'm building things that will outlive me."*
