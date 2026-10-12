@@ -72,7 +72,7 @@ I also defined **Akkhar-Hex**, a Bengali hexadecimal notation (০–৯, ক–
 ### 🚚 Truck Pai: logistics platform, Bangladesh
 [truckpai.com](https://truckpai.com) · Co-founder, Lead Engineer & CTO
 
-I designed, built, and continuously develop the entire technical platform: **7 Flutter apps, 25+ Node.js modules, a Go microservice, and PostgreSQL**. It runs in production, is upgraded daily, and serves **~1,000 active users and drivers**. It's my largest project.
+I designed, built, and continuously develop the entire technical platform **solo**, as a single proprietary monorepo: **7 Flutter apps, 25+ Node.js modules, a Go microservice, and PostgreSQL**. It runs in production, is upgraded daily, and serves **~1,000 active users and drivers**. It's my largest project.
 
 ### 🧠 Aura-Arc: economic OS for AI agents (hackathon)
 [Repo](https://github.com/Akkhar-Labs/aura-arc) · [Project page](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier) · lablab.ai *Agentic Economy on Arc*
