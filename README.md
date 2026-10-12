@@ -21,7 +21,7 @@
 ### Proof, not adjectives
 
 - 🚚 **~1,000 active users & drivers** on Truck Pai, a production logistics platform I built and run.
-- ⚙️ **Brud Code**: 770+ installs on the VS Code Marketplace and 29★ on GitHub; patched 467 files with 0 failures on a 384K-LOC codebase.
+- ⚙️ **Brud Code**: 770+ installs on the VS Code Marketplace and 30★ on GitHub; patched 467 files with 0 failures on Truck Pai's production codebase.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
 - 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
@@ -64,7 +64,7 @@ I also defined **Akkhar-Hex**, a Bengali hexadecimal notation (০–৯, ক–
 - Snapshot history engine, session revert/restore, 7-day trash
 - Terminal engine: sequential, parallel, and conditional runs; timeouts; dangerous-command blocking; live streaming
 - Monorepo (core · protocol · UI · VS Code adapter), CI on GitHub Actions, provider parity tests
-- **Benchmarks on a 384K-LOC codebase:** 1,000 files created in under 1 s · 467 files patched with 0 failures · 1,000 files reverted and restored in milliseconds
+- **Benchmarked on Truck Pai's production codebase (384K LOC at the time):** 1,000 files created in under 1 s · 467 files patched with 0 failures · 1,000 files reverted and restored in milliseconds
 
 **Brud Prime**, an autonomous multi-agent engineering system, is *in active development and coming soon* ([announcement](https://brudcode.com/announcements)).
 <sub>Lineage: Akkhar Code Patcher → Sover → Brud Code.</sub>
@@ -72,7 +72,7 @@ I also defined **Akkhar-Hex**, a Bengali hexadecimal notation (০–৯, ক–
 ### 🚚 Truck Pai: logistics platform, Bangladesh
 [truckpai.com](https://truckpai.com) · Co-founder, Lead Engineer & CTO
 
-I designed, built, and maintain the entire technical platform: **7 Flutter apps, 25+ Node.js modules, a Go microservice, and PostgreSQL**. I shipped the first version in 20 days, and it now serves **~1,000 active users and drivers**.
+I designed, built, and continuously develop the entire technical platform: **7 Flutter apps, 25+ Node.js modules, a Go microservice, and PostgreSQL**. It runs in production, is upgraded daily, and serves **~1,000 active users and drivers**. It's my largest project.
 
 ### 🧠 Aura-Arc: economic OS for AI agents (hackathon)
 [Repo](https://github.com/Akkhar-Labs/aura-arc) · [Project page](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier) · lablab.ai *Agentic Economy on Arc*
@@ -88,7 +88,7 @@ A deterministic C++17 core compiled to WebAssembly, Circle USDC nanopayments on 
 
 ## Client work
 
-Ongoing freelance work for businesses in Bangladesh. Selected projects:
+Professional freelancer since 2025, with ongoing client work for businesses in Bangladesh. Selected projects:
 
 - **[iLab BD](https://ilabbd.com)**: training platform for mobile-repair and technology courses. I built the entire mobile app, shipped many new back-end features, and contributed across the web front end.
 - **[My Pharma](https://mypharma.com.bd)**: Front-end developer (Next.js).
