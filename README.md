@@ -86,6 +86,13 @@ A deterministic C++17 core compiled to WebAssembly, Circle USDC nanopayments on 
 
 ---
 
+## Client work
+
+Ongoing freelance work for businesses in Bangladesh. Selected projects:
+
+- **[iLab BD](https://ilabbd.com)**: training platform for mobile-repair and technology courses. I built the entire mobile app, shipped many new back-end features, and contributed across the web front end.
+- **[My Pharma](https://mypharma.com.bd)**: Front-end developer (Next.js).
+
 ## Research & protocols
 
 | | |
