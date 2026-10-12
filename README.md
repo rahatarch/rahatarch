@@ -23,7 +23,7 @@
 - 🚚 **~1,000 active users & drivers** on Truck Pai, a production logistics platform I built and run.
 - ⚙️ **Brud Code**: 780+ installs on the VS Code Marketplace and 29★ on GitHub; patched 467 files with 0 failures on a 384K-LOC codebase.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
-- 🧠 **Endorsed by a Google DeepMind engineer** for Aura-Arc (quote below).
+- 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
 
 ---
@@ -80,7 +80,7 @@ I designed, built, and maintain the entire technical platform: **7 Flutter apps,
 A deterministic C++17 core compiled to WebAssembly, Circle USDC nanopayments on Arc, a 3-way escrow handshake, and Supabase-backed crash recovery, with a Next.js 15 front end.
 
 > *"Wild execution from a solo 16-year-old: deterministic C++17 core compiled to WebAssembly for financial atomicity off the JS main thread, plus a 3-way ASE handshake for trust-gap escrow and a Wasm/Supabase rehydration story for crash recovery. The unit-economics framing ($0.005 task vs $0.15 gas) is exactly the Arc pitch. Impressive."*
-> — **[Naman Goyal](https://namangoyal.com)**, Engineer at Google DeepMind
+> — **[Naman Goyal](https://namangoyal.com)**, Researcher at Google DeepMind · [source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)
 >
 > <sub>(I was actually 15 when I built it.)</sub>
 
