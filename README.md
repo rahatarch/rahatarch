@@ -21,7 +21,7 @@
 ### Proof, not adjectives
 
 - 🚚 **~1,000 active users & drivers** on Truck Pai, a production logistics platform I built and run.
-- ⚙️ **Brud Code**: 780+ installs on the VS Code Marketplace and 29★ on GitHub; patched 467 files with 0 failures on a 384K-LOC codebase.
+- ⚙️ **Brud Code**: 770+ installs on the VS Code Marketplace and 29★ on GitHub; patched 467 files with 0 failures on a 384K-LOC codebase.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
 - 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
@@ -56,7 +56,7 @@ I also defined **Akkhar-Hex**, a Bengali hexadecimal notation (০–৯, ক–
 ### ⚙️ Brud Code: deterministic execution engine for AI code edits
 [Repo](https://github.com/rahatarch/brud) · [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=akkhar-labs.brud) · MIT
 
-![Installs](https://img.shields.io/visual-studio-marketplace/i/akkhar-labs.brud?style=flat-square&label=installs&color=FF6F00) ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
+![Installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
 
 > Brud Code lets any AI chatbot safely edit real codebases. Every change is reviewed, logged, and reversible.
 
