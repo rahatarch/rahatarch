@@ -126,7 +126,7 @@ A deterministic C++17 core compiled to WebAssembly, Circle USDC nanopayments on 
 ## Ideas I'm developing
 
 - 🎓 **[Just-In-Time Learning Educational Model](https://github.com/rahatarch/jit-learning-model)**: *proposal, draft v0.1.* An education model in which a learner's own goal decides what they learn next, with guidance when they need it and autonomy when they've earned it. It includes an admissions approach, an assessment framework, and a plan for testing whether it works. *"Who can't find their path, teach them. Whoever can, let them be free."*
-- 📖 **Orchestrator of Reality**: book in progress.
+- 📖 **Orchestrator of Reality**: book in progress. Its multi-model critique workflow parallels recent research on debate-based oversight (e.g., [arXiv:2605.27483](https://arxiv.org/abs/2605.27483)).
 
 ---
 
