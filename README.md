@@ -14,14 +14,15 @@
 
 **Now:** Co-founder, Lead Engineer & CTO at [Truck Pai](https://truckpai.com) · Founder & Engineer at [Brud Code](https://github.com/rahatarch/brud) · Founder & Systems Researcher at [Akkhar-Labs](https://github.com/Akkhar-Labs)
 
-**Looking for:** internships, fellowships, and research collaborations in full-stack engineering, systems engineering, and research.
+**Open to:** research collaborations, fellowships, and ambitious projects in systems engineering, AI infrastructure, and agent protocols.
 
 ---
 
 ### Proof, not adjectives
 
-- 🚚 **~1,000 active users & drivers** on Truck Pai, a production logistics platform I built and run.
-- ⚙️ **Brud Code**: 770+ installs on the VS Code Marketplace and 30★ on GitHub; patched 467 files with 0 failures on Truck Pai's production codebase.
+- 🚚 **~1,500 active users & drivers** on Truck Pai, a production logistics platform I built and run.
+- ⚙️ **Brud Code**: ![VS Code installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) on the VS Code Marketplace, ![GitHub stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&logo=github&label=stars&color=FF6F00) on GitHub; patched 467 files with 0 failures on Truck Pai's production codebase.
+- 📄 **Published research**: [HashedContext](https://doi.org/10.5281/zenodo.23668958) (57.7–67.2% fewer prompt tokens) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both archived on Zenodo with permanent DOIs.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
 - 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
@@ -29,6 +30,26 @@
 ---
 
 ## Featured work
+
+### ⚙️ Brud Code: deterministic execution engine for AI code edits · ⭐ Flagship
+[Repo](https://github.com/rahatarch/brud) · [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=akkhar-labs.brud) · [Website](https://brudcode.com) · MIT
+
+![Installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
+
+> Brud Code lets any AI chatbot safely edit real codebases. Every change is reviewed, logged, and reversible.
+
+My most actively developed project: live on the VS Code Marketplace and proven on a real production codebase. It is architected as a layered, out-of-process system:
+
+- **Out-of-process daemon:** the VS Code extension now runs execution and history through a standalone daemon over a typed **JSON-RPC** protocol (wire contracts, methods, error definitions), with a lifecycle supervisor, a client harness, a daemon staging/packaging pipeline, and end-to-end tests.
+- **Microkernel with a plugin system:** `@brud/kernel` has a Level-1 PluginManager with permission contexts, topological dependency ordering, fail-fast rollback, dynamic lifecycle, and unforgeable official-plugin branding with namespace protection.
+- **Layered services on the kernel:** a `SettingsService` (atomic storage, safety lattice), a `WorkspaceService` (boundary containment) and a `BrudFileSystem` (Level-0 storage drivers, hardened `PathValidator`, durability hardening), all bootstrapped through `createStandardKernel` with injectable storage drivers.
+- **Universal History:** a SQLite-backed session ledger with a reversibility model and a state machine, replacing the earlier snapshot-only approach.
+- **Reliability:** a read-pipeline governor with a single-materialization envelope, single-flight execution lifecycle, hardened terminal streaming, and a repo-wide zero-`any`, zero-lint-error baseline.
+- Monorepo (core · protocol · UI · daemon · VS Code adapter), CI on GitHub Actions, provider parity tests.
+- **Benchmarked on Truck Pai's production codebase (384K LOC at the time):** 1,000 files created in under 1 s · 467 files patched with 0 failures · 1,000 files reverted and restored in milliseconds
+
+**Brud Prime**, an autonomous multi-agent engineering system, is *in active development and coming soon* ([announcement](https://brudcode.com/announcements)).
+<sub>Lineage: Akkhar Code Patcher → Sover → Brud Code.</sub>
 
 ### 🔣 Akkhar-Labs: computing from first principles, in Bengali
 [Org](https://github.com/Akkhar-Labs) · [Project Ekushey](https://github.com/Akkhar-Labs/project-ekushey)
@@ -52,22 +73,6 @@ The bottom of that stack already exists and runs:
 | [**Nirdeshika SDK**](https://github.com/Akkhar-Labs/nirdeshika-sdk) | Unified toolchain: `nirdeshika --compute program.বয়ন` | Toolchain design, CMake builds |
 
 I also defined **Akkhar-Hex**, a Bengali hexadecimal notation (০–৯, ক–চ). Next on the roadmap: a Bengali character encoding, 32/64-bit ISAs, the **Kotha** programming language, the **BAPS** kernel, and **Matrika OS**.
-
-### ⚙️ Brud Code: deterministic execution engine for AI code edits
-[Repo](https://github.com/rahatarch/brud) · [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=akkhar-labs.brud) · MIT
-
-![Installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
-
-> Brud Code lets any AI chatbot safely edit real codebases. Every change is reviewed, logged, and reversible.
-
-- Standalone microkernel (`@brud/kernel`) with a capability pipeline and workspace sandboxing
-- Snapshot history engine, session revert/restore, 7-day trash
-- Terminal engine: sequential, parallel, and conditional runs; timeouts; dangerous-command blocking; live streaming
-- Monorepo (core · protocol · UI · VS Code adapter), CI on GitHub Actions, provider parity tests
-- **Benchmarked on Truck Pai's production codebase (384K LOC at the time):** 1,000 files created in under 1 s · 467 files patched with 0 failures · 1,000 files reverted and restored in milliseconds
-
-**Brud Prime**, an autonomous multi-agent engineering system, is *in active development and coming soon* ([announcement](https://brudcode.com/announcements)).
-<sub>Lineage: Akkhar Code Patcher → Sover → Brud Code.</sub>
 
 ### 🚚 Truck Pai: logistics platform, Bangladesh
 [truckpai.com](https://truckpai.com) · Co-founder, Lead Engineer & CTO
@@ -93,12 +98,33 @@ Professional freelancer since 2025, with ongoing client work for businesses in B
 - **[iLab BD](https://ilabbd.com)**: training platform for mobile-repair and technology courses. I built the entire mobile app, shipped many new back-end features, and contributed across the web front end.
 - **[My Pharma](https://mypharma.com.bd)**: Front-end developer (Next.js).
 
-## Research & protocols
+## 📄 Published research
+
+Formal publications, archived on [Zenodo](https://zenodo.org) with permanent DOIs.
+
+### Scaling GPU KV-Cache Efficiency and Inference Concurrency for Autonomous Agents with HashedContext
+[Paper (Zenodo)](https://zenodo.org/records/23668958) · [DOI: 10.5281/zenodo.23668958](https://doi.org/10.5281/zenodo.23668958) · [Code](https://github.com/rahatarch/hashedcontext)
+
+Autonomous coding agents re-send unchanged source files to the LLM on every step, so prompt tokens grow as O(M × N × P). That saturates GPU KV-cache memory and limits multi-tenant serving concurrency. **HashedContext** is a content-addressed context architecture that removes the redundancy through four mechanisms:
+
+1. SHA-256 hash-gated file state tracking
+2. Historical conversation deduplication via compact references (`[HASH_STUB]`)
+3. Attention-anchored authoritative tail rebasing
+4. On-demand historical state resolution from a local content-addressed vault
+
+It runs either edge-natively inside client editors or transparently at server-side inference gateways.
+
+**Results:** on production DeepSeek V4 endpoints, **57.7%–67.2% fewer active prompt tokens** on basic 4-to-5-turn workflows, with savings bounded at **90%–97%** on extended multi-file refactoring sessions. No detectable degradation in reasoning accuracy or diff-resolution fidelity.
+
+### Zero-Redundancy Context Protocol (ZRCP)
+[Paper (Zenodo)](https://zenodo.org/records/21955969) · [DOI: 10.5281/zenodo.21955969](https://doi.org/10.5281/zenodo.21955969) · [Spec & code](https://github.com/rahatarch/zrcp)
+
+A protocol specification for removing redundant context between AI agents using content hashes.
+
+### Protocol collaboration
 
 | | |
 |---|---|
-| [**HashedContext**](https://github.com/rahatarch/hashedcontext) | *Research paper, working draft.* Hash-referenced context for LLM agents. Early benchmarks show **57.7–67.2% fewer prompt tokens** on DeepSeek V4 production endpoints. |
-| [**ZRCP**](https://github.com/rahatarch/zrcp) | Public protocol specification for removing redundant context between AI agents using content hashes. |
 | [**ASM Trust Delta Receipt v0.1**](https://github.com/YE-YI7/asm-spec/issues/7) | Co-authored with [Yi Guo](https://www.linkedin.com/in/yi-g-8842153a0/), creator of ASM (Product Manager, Tencent Ads). I contributed the first external reference integration, and my design additions (`public_key_fingerprint`, `supersedes`) were merged in [PR #8](https://github.com/YE-YI7/asm-spec/pull/8) and cited in the ASM paper. |
 
 ## Developer tools
@@ -138,6 +164,6 @@ Professional freelancer since 2025, with ongoing client work for businesses in B
 ---
 
 <p align="center">
-  <b>Open to internships, fellowships, research collaborations, and serious projects.</b><br/>
+  <b>Open to research collaborations, fellowships, and ambitious systems and AI-infrastructure projects.</b><br/>
   <a href="mailto:rahathasan5773@gmail.com">rahathasan5773@gmail.com</a>
 </p>
