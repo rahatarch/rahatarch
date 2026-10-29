@@ -22,7 +22,7 @@
 
 - 🚚 **~1,500 active users & drivers** on Truck Pai, a production logistics platform I built and run.
 - ⚙️ **Brud Code**: ![VS Code installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) on the VS Code Marketplace, ![GitHub stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&logo=github&label=stars&color=FF6F00) on GitHub; patched 467 files with 0 failures on Truck Pai's production codebase.
-- 📄 **Published research**: [HashedContext](https://doi.org/10.5281/zenodo.23698048) (57.7% fewer prompt tokens, 79.3% fewer file tokens) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both archived on Zenodo with permanent DOIs.
+- 📄 **Published research**: [HashedContext](https://doi.org/10.5281/zenodo.23668957) (up to 88.7% less GPU KV-cache per agent and 3.6× more agent turns per hour in simulation) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both archived on Zenodo with permanent DOIs.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
 - 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
@@ -102,19 +102,19 @@ Professional freelancer since 2025, with ongoing client work for businesses in B
 
 Formal publications, archived on [Zenodo](https://zenodo.org) with permanent DOIs.
 
-### Scaling GPU KV-Cache Efficiency and Inference Concurrency for Autonomous Agents with HashedContext
-[Paper (Zenodo)](https://zenodo.org/records/23698048) · [DOI: 10.5281/zenodo.23698048](https://doi.org/10.5281/zenodo.23698048) · [Code](https://github.com/rahatarch/hashedcontext)
+### Scaling GPU KV-Cache Efficiency and Inference Concurrency for Autonomous Agents with HashedContext: A Dual-Mode Architecture
+[Paper (latest version)](https://doi.org/10.5281/zenodo.23668957) · [DOI: 10.5281/zenodo.23668957](https://doi.org/10.5281/zenodo.23668957) · [Code](https://github.com/rahatarch/hashedcontext)
 
-Autonomous coding agents re-send unchanged source files to the LLM on every step, so prompt tokens grow as O(M × N × P). That saturates GPU KV-cache memory and limits multi-tenant serving concurrency. **HashedContext** is a content-addressed context architecture that removes the redundancy through four mechanisms:
+Autonomous coding agents re-send unchanged source files to the LLM on every step, so prompts grow with every turn. That saturates GPU KV-cache memory and limits multi-tenant serving concurrency. **HashedContext** is a content-addressed context architecture that removes the redundancy: each file is tracked by its SHA-256 hash, past copies become compact `[HASH_STUB]` references, and every version stays in a local vault for lossless recovery.
 
-1. SHA-256 hash-gated file state tracking
-2. Historical conversation deduplication via compact references (`[HASH_STUB]`)
-3. Attention-anchored authoritative tail rebasing
-4. On-demand historical state resolution from a local content-addressed vault
+It is a **dual-mode architecture**:
 
-It runs either edge-natively inside client editors or transparently at server-side inference gateways.
+1. **Mode A (Authoritative Tail):** one complete copy of each current file at the end of the prompt, for the lowest memory use
+2. **Mode B (Lazy Tail):** history is never rewritten and only changed lines are sent, so a prefix cache can reuse almost the entire prompt
 
-**Results:** on production DeepSeek V4 endpoints, **57.7% fewer active prompt tokens** and **79.3% fewer file tokens** on basic 4-to-5-turn workflows, with savings bounded at **90%–97%** on extended multi-file refactoring sessions. No detectable degradation in reasoning accuracy or diff-resolution fidelity.
+Both modes run either edge-natively inside client editors or transparently at server-side inference gateways.
+
+**Results:** in a simulated evaluation with 20,000 coding agents on real open-source repositories, **up to 88.7% less KV-cache per agent** and, on a 16-GPU cluster serving 512 agents, **up to 3.6× more agent turns per hour**. With a warm prefix cache, Mode B processes **88.1% fewer prompt tokens**.
 
 ### Zero-Redundancy Context Protocol (ZRCP)
 [Paper (Zenodo)](https://zenodo.org/records/21955969) · [DOI: 10.5281/zenodo.21955969](https://doi.org/10.5281/zenodo.21955969) · [Spec & code](https://github.com/rahatarch/zrcp)
