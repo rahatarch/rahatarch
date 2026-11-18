@@ -2,8 +2,8 @@
 
 <p align="center">
   <b>Systems engineer & founder · Bogura, Bangladesh</b><br/>
-  I build execution engines for AI, protocols for agents, and a computer architecture in my native language — from the instruction set up.<br/>
-  <sub>9th-grade student and self-taught engineer. Everything below was designed and built at age 15. I'm 16 now, and still building.</sub>
+  I build runtimes and execution engines for AI agents, protocols for agents, and a computer architecture in my native language — from the instruction set up.<br/>
+  <sub>9th-grade student and self-taught engineer, building since 15. I'm 16 now.</sub>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
   <a href="mailto:rahatarch@akkharlabs.com"><img src="https://img.shields.io/badge/Email-rahatarch@akkharlabs.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
 </p>
 
-**Now:** Co-founder, Lead Engineer & CTO at [Truck Pai](https://truckpai.com) · Founder & Engineer at [Brud Code](https://github.com/rahatarch/brud) · Founder & Systems Researcher at [Akkhar-Labs](https://github.com/Akkhar-Labs)
+**Now:** Co-founder, Lead Engineer & CTO at [Truck Pai](https://truckpai.com) · Founder & Engineer at Brud ([Brud OS](https://github.com/rahatarch/brud) · [Brud Code](https://brudcode.com)) · Founder & Systems Researcher at [Akkhar-Labs](https://github.com/Akkhar-Labs)
 
 **Open to:** research collaborations, fellowships, and ambitious projects in systems engineering, AI infrastructure, and agent protocols.
 
@@ -21,7 +21,8 @@
 ### Proof, not adjectives
 
 - 🚚 **~1,500 active users & drivers** on Truck Pai, a production logistics platform I built and run.
-- ⚙️ **Brud Code**: ![VS Code installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) on the VS Code Marketplace, ![GitHub stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&logo=github&label=stars&color=FF6F00) on GitHub; patched 467 files with 0 failures on Truck Pai's production codebase.
+- 🧩 **Brud OS**: an open-source, embeddable runtime for AI agents. All six of its core services are working. ![GitHub stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&logo=github&label=stars&color=FF6F00) on GitHub.
+- ⚙️ **Brud Code**: ![VS Code installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) on the VS Code Marketplace, free; patched 467 files with 0 failures on Truck Pai's production codebase.
 - 📄 **Published research**: [HashedContext](https://doi.org/10.5281/zenodo.23668957) (up to 88.7% less GPU KV-cache per agent and 3.6× more agent turns per hour in simulation) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both archived on Zenodo with permanent DOIs.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
 - 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
@@ -31,25 +32,64 @@
 
 ## Featured work
 
-### ⚙️ Brud Code: deterministic execution engine for AI code edits · ⭐ Flagship
-[Repo](https://github.com/rahatarch/brud) · [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=akkhar-labs.brud) · [Website](https://brudcode.com) · MIT
+### 🧩 Brud: a runtime for AI agents, and the coding tool built on it · ⭐ Flagship
 
-![Installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
+#### Brud OS
+[Repo](https://github.com/rahatarch/brud) · Apache 2.0 · Developer Preview, in active development
+
+![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
+
+> An embeddable, zero-trust runtime that lets apps give AI agents real power (files, terminal, network) without handing them the keys to the machine.
+
+Most agent frameworks either give the model free rein over the host machine or wrap it in a heavy virtual machine that can't be embedded in a real product. Brud OS takes a different path: its core holds no power of its own. It only checks who each component is, decides what it may do, and routes each request to the right place.
+
+Every app gets the same **fixed floor of six core services**. They can't be removed or swapped out, and Brud OS refuses to start if any of them is missing or fails verification. Everything else (file access, terminal, storage, integrations) is an optional service the app chooses for itself.
+
+**What it saves the people building on it:** making an agent product safe usually means months of work before the product itself even starts: sandboxing, permission systems, identity checks, secure process communication. Brud OS ships all of that as the starting point, so you get security by default instead of building it yourself, and you can spend your time on what makes your app different. Eleven official services are already built, and the plan is to offer **25+ official, ready-made services and plugins** once Brud OS is published, so an agent-powered app can come together in days instead of months.
+
+**Working today: the six core services**
+- **Identity:** every component gets an ID that the runtime issues from a hash of its code. A modified plugin can't pass itself off as a trusted one by reusing its name, and a component without a verified identity doesn't run.
+- **Capability registry:** a single list of everything that can be called. It is sealed once the system is running, so nothing new can slip in afterwards.
+- **Parser and router:** every request is turned into one standard shape and sent to the component that owns that kind of operation. Anything without an owner is rejected.
+- **Sandbox:** unofficial and unverified components run only inside a WebAssembly sandbox, and no configuration can switch it off. Whether a component is sandboxed depends on what the app trusts, not on who wrote it.
+- **Events:** components can publish signals without knowing who is listening. This is the "observe" counterpart to the "call" registry.
+
+**Official services, built on top of the core**
+- **Plugins, like VS Code extensions, for any app:** an app built on Brud OS can load and unload plugins while it runs, and each one extends what the app can do, just as extensions extend VS Code. The plugin system comes ready-made, so an app can offer its own in-app plugin marketplace within days instead of building one from scratch. Plugins load in a safe order, get only the permissions they're granted, and roll back cleanly if one fails. Official status is tied to verified code, so nobody can fake it by copying a name.
+- **Files and workspace:** file access only within what's authorized, with durable writes, and a hard boundary that keeps everything inside the open project.
+- **Terminal:** runs commands as a controlled service instead of giving raw access to the host machine.
+- **AI tools:** the list of every tool an AI is allowed to call to do real work.
+- **Human-only actions:** some operations can only be triggered by a person, never by the AI, and that split is enforced every time a request is dispatched.
+- **History:** a persistent record of every session, with undo and redo across the whole runtime.
+- **Settings, validation and utilities:** atomic settings changes with change notifications, schema-based data validation, and shared helpers.
+
+These are the official versions, not the only ones. Any developer or open-source team can build their own services, including direct alternatives to the official ones, and they plug in under the same rules. The official set is the starting point, and the ecosystem grows as third parties start building on it.
+
+**Designed, in progress**
+- **Permissions that only narrow:** a sub-agent can never hold more access than the agent that created it. Read-write can become read-only, never the reverse.
+- **Per-component storage** with transactional (ACID) guarantees.
+- **An encrypted, mutually authenticated channel** between the app and the runtime when it runs as a separate process.
+
+#### Brud Code
+[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=akkhar-labs.brud) · [Website](https://brudcode.com) · Free · Closed source
+
+![Installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs)
 
 > Brud Code lets any AI chatbot safely edit real codebases. Every change is reviewed, logged, and reversible.
 
-My most actively developed project: live on the VS Code Marketplace and proven on a real production codebase. It is architected as a layered, out-of-process system:
+**Free, and staying free.** Maintaining Brud OS, an open-source Brud Code, and a separate release build on my own wasn't sustainable, so Brud Code is now closed source and being rebuilt on Brud OS. The move is about focus, not about charging for it. The open-source work continues in Brud OS itself.
 
-- **Out-of-process daemon:** the VS Code extension now runs execution and history through a standalone daemon over a typed **JSON-RPC** protocol (wire contracts, methods, error definitions), with a lifecycle supervisor, a client harness, a daemon staging/packaging pipeline, and end-to-end tests.
-- **Microkernel with a plugin system:** `@brud/kernel` has a Level-1 PluginManager with permission contexts, topological dependency ordering, fail-fast rollback, dynamic lifecycle, and unforgeable official-plugin branding with namespace protection.
-- **Layered services on the kernel:** a `SettingsService` (atomic storage, safety lattice), a `WorkspaceService` (boundary containment) and a `BrudFileSystem` (Level-0 storage drivers, hardened `PathValidator`, durability hardening), all bootstrapped through `createStandardKernel` with injectable storage drivers.
-- **Universal History:** a SQLite-backed session ledger with a reversibility model and a state machine, replacing the earlier snapshot-only approach.
-- **Reliability:** a read-pipeline governor with a single-materialization envelope, single-flight execution lifecycle, hardened terminal streaming, and a repo-wide zero-`any`, zero-lint-error baseline.
-- Monorepo (core · protocol · UI · daemon · VS Code adapter), CI on GitHub Actions, provider parity tests.
+Brud Code was already built like a small operating system, and that core is what grew into Brud OS:
+
+- **A separate background process** runs every edit and keeps the history. The editor talks to it through a typed protocol, and a supervisor manages its lifecycle.
+- **A small plugin core** loads plugins in a safe dependency order, gives each one only the permissions it was granted, and rolls everything back cleanly if one fails to start.
+- **Strict file safety:** every file operation is checked to stay inside the project, and writes are atomic and durable.
+- **Full session history** in a local database, so every change can be traced and undone.
+- **A strict quality bar:** no untyped code, zero lint errors, and CI across a multi-package monorepo.
 - **Benchmarked on Truck Pai's production codebase (384K LOC at the time):** 1,000 files created in under 1 s · 467 files patched with 0 failures · 1,000 files reverted and restored in milliseconds
 
 **Brud Prime**, an autonomous multi-agent engineering system, is *in active development and coming soon* ([announcement](https://brudcode.com/announcements)).
-<sub>Lineage: Akkhar Code Patcher → Sover → Brud Code.</sub>
+<sub>Lineage: Akkhar Code Patcher → Sover → Brud Code (age 15) → Brud OS (age 16, grown out of Brud Code's core) → Brud Code, now being rebuilt on Brud OS.</sub>
 
 ### 🔣 Akkhar-Labs: computing from first principles, in Bengali
 [Org](https://github.com/Akkhar-Labs) · [Project Ekushey](https://github.com/Akkhar-Labs/project-ekushey)
