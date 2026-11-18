@@ -23,9 +23,9 @@
 - 🚚 **~1,500 active users & drivers** on Truck Pai, a production logistics platform I built and run.
 - 🧩 **Brud OS**: an open-source, embeddable runtime for AI agents. All six of its core services are working. ![GitHub stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&logo=github&label=stars&color=FF6F00) on GitHub.
 - ⚙️ **Brud Code**: ![VS Code installs](https://vsmarketplacebadges.dev/installs-short/akkhar-labs.brud.svg?style=flat-square&color=FF6F00&label=installs) on the VS Code Marketplace, free; patched 467 files with 0 failures on Truck Pai's production codebase.
-- 📄 **Published research**: [HashedContext](https://doi.org/10.5281/zenodo.23668957) (up to 88.7% less GPU KV-cache per agent and 3.6× more agent turns per hour in simulation) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both archived on Zenodo with permanent DOIs.
+- 📄 **Research papers**: [HashedContext](https://doi.org/10.5281/zenodo.23668957) (up to 88.7% less GPU KV-cache per agent and 3.6× more agent turns per hour in simulation) and [ZRCP](https://doi.org/10.5281/zenodo.21955969), both preprints archived on Zenodo with permanent DOIs.
 - 🧾 **Co-author of an accepted protocol extension**: ASM Trust Delta Receipt v0.1. My design additions were merged and are cited in the ASM paper.
-- 🧠 **Endorsed by a Google DeepMind researcher** (founding team, Gemini Deep Research) for Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
+- 🧠 **Praised by a Google DeepMind researcher** (founding team, Gemini Deep Research) judging the hackathon where I built Aura-Arc ([source](https://lablab.ai/ai-hackathons/nano-payments-arc/akkhar-labs/aura-arc-the-economic-os-for-the-agentic-frontier)).
 - 🔣 **Designed a 16-bit CPU instruction set in Bengali**, with my own assembler and simulator that run it end to end.
 
 ---
@@ -40,6 +40,8 @@
 ![Stars](https://img.shields.io/github/stars/rahatarch/brud?style=flat-square&color=FF6F00)
 
 > An embeddable, zero-trust runtime that lets apps give AI agents real power (files, terminal, network) without handing them the keys to the machine.
+
+Think of it as **WordPress for the agentic era**: a small core, a ready-made ecosystem of services and plugins, and events any plugin can hook into, but with every plugin sandboxed and permission-checked.
 
 Most agent frameworks either give the model free rein over the host machine or wrap it in a heavy virtual machine that can't be embedded in a real product. Brud OS takes a different path: its core holds no power of its own. It only checks who each component is, decides what it may do, and routes each request to the right place.
 
@@ -138,9 +140,9 @@ Professional freelancer since 2025, with ongoing client work for businesses in B
 - **[iLab BD](https://ilabbd.com)**: training platform for mobile-repair and technology courses. I built the entire mobile app, shipped many new back-end features, and contributed across the web front end.
 - **[My Pharma](https://mypharma.com.bd)**: Front-end developer (Next.js).
 
-## 📄 Published research
+## 📄 Research papers
 
-Formal publications, archived on [Zenodo](https://zenodo.org) with permanent DOIs.
+Preprints archived on [Zenodo](https://zenodo.org) with permanent DOIs.
 
 ### Scaling GPU KV-Cache Efficiency and Inference Concurrency for Autonomous Agents with HashedContext: A Dual-Mode Architecture
 [Paper (latest version)](https://doi.org/10.5281/zenodo.23668957) · [DOI: 10.5281/zenodo.23668957](https://doi.org/10.5281/zenodo.23668957) · [Code](https://github.com/rahatarch/hashedcontext)
